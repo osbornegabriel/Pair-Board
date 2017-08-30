@@ -3,16 +3,20 @@ DBC PairBoard as you've never seen it before!
 
 ### Contributing Engineers
 Michael Moroney
-*mmoronery01* 
+
+__ *mmoroney01* __
 
 Eric Wotring
-*ewotring*
+
+__ *ewotring* __
 
 Ravi Patel
-*rrpatel25*
+
+__ *rrpatel25* __
 
 Gabriel Osborne
-*osbornegabriel*
+
+__ *osbornegabriel* __
 
 ### Description
 This app allows DBC students to easily pair with mentoring fellow DBC students/alumni
