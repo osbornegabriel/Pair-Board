@@ -4,10 +4,13 @@ DBC PairBoard as you've never seen it before!
 ### Contributing Engineers
 Michael Moroney
 *mmoronery01* 
+
 Eric Wotring
 *ewotring*
+
 Ravi Patel
 *rrpatel25*
+
 Gabriel Osborne
 *osbornegabriel*
 
