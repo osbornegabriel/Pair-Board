@@ -7,11 +7,16 @@ class SlotsController < ApplicationController
   def create
     @slot = Slot.new(slot_params)
 
-    if @slot.save
+    # if @slot.save
 
-    else
+    # else
 
-    end
+    # end
   end
 
+  private
+
+    def slot_params
+      params.require(:slot).permit(:start_date, :start_time, :duration)
+    end
 end

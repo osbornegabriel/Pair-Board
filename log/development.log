@@ -992,3 +992,44 @@ Processing by SlotsController#new as HTML
 Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:22:05 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"izfnLTc3rhEz9IrMkwuflr4YUlacq1S0GNxLjZpsuXAXSF9jVnRUfTbLZ+kNB6kjgYfffy2o/IkW9mkBa5LAVg==", "slot"=>{"start_date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `slot_params' for #<SlotsController:0x007fa4df38dc78>
+Did you mean?  slot_path):
+  
+app/controllers/slots_controller.rb:8:in `create'
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:29:01 -0500
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:29:11 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"izfnLTc3rhEz9IrMkwuflr4YUlacq1S0GNxLjZpsuXAXSF9jVnRUfTbLZ+kNB6kjgYfffy2o/IkW9mkBa5LAVg==", "slot"=>{"start_date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 5.7ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'start_date' for Slot.):
+  
+app/controllers/slots_controller.rb:8:in `create'
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (17.0ms)
+  Rendered slots/new.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 271ms (Views: 256.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:29:13 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"epnRK22ikID+AeEHakczd1FIjuLd1ggJZAmp+KKQfEfm5mllDOFq7Ps+DCL0SwXCbtcDy2zVoDRqI4t0U24FYQ==", "slot"=>{"start_date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'start_date' for Slot.):
+  
+app/controllers/slots_controller.rb:8:in `create'
