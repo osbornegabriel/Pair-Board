@@ -1,22 +1,37 @@
 <h3>Sign up to pair!</h3>
-<%= button_to "Create New Slot", new_slot_path(@slot), method: "get" %>
+<%= button_to "Create New Slot", new_slot_path(@slot), method: "get" %><br>
 
-<% @slots.each do |slot| %>
-  <div class="slot">
-	<%= render partial: "slot", locals: { slot: slot } %>
-  </div>
-<% end %>
+<div class="slots">
+  <% @slots.each do |slot| %>
+	<div class="slot">
+	  <%= render partial: "slot", locals: { slot: slot } %>
+	</div>
+  <% end %>
+</div>
 
-<h2>Top Mentors</h2>
 
-<% @top_mentors.each do |mentor| %>
-  <%= mentor.first_name%>
-  <%= mentor.slots.inject(0){|sum, slot| sum + slot.duration} %><br>
-<% end %>
+<div class="leaderboard">
+	<div class="mentors">
+	  <h3>Top Mentors</h3>
+	  <hr>
+	  <h5 class="username">Username:</h5>
+	  <h5 class="points">Points:</h5>
+	  <% @top_mentors.each do |mentor| %>
+		<div class="mentor">
+		  <%= mentor.first_name %>
+		  <%= mentor.slots.inject(0){|sum, slot| sum + slot.duration}/30 %><br>
+		</div><br>
+	  <% end %>
+	</div>
 
-<h2>Top Mentees</h2>
-
-<% @top_mentees.each do |mentee| %>
-  <%= mentee.first_name%>
-  <%= mentee.appointments.count %><br>
-<% end %>
+	<div class="mentees">
+	  <h3>Top Mentees</h3>
+	  <hr>
+	  <h5 class="username">Username:</h5>
+	  <h5 class="points">Points:</h5>
+	  <% @top_mentees.each do |mentee| %>
+	    <%= mentee.first_name%>
+	    <%= mentee.appointments.count%><br>
+	  <% end %>
+	</div>
+</div>

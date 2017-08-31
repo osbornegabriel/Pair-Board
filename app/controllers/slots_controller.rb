@@ -3,6 +3,7 @@ class SlotsController < ApplicationController
   def index
   	# sort these in chronological order
   	@slots = Slot.all
+    @slots = @slots.order(:start_time)
 
   	# get top 5 sorted by number of appointments
   	 @top_mentors = User.all

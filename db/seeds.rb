@@ -15,36 +15,36 @@ User.create(first_name: "Peter", last_name: "White", email: "wom@tom.com", passw
 
 
 8.times do
-  Slot.create(start_time: Time.now, duration: 60, mentor_id: 1)
+  Slot.create(duration: 60, start_time: Time.now, date: Date.today, mentor_id: 1)
 end
 
 2.times do
-  Slot.create(start_time: Time.now, duration: 90, mentor_id: 1)
+  Slot.create(duration: 90, start_time: Time.now, date: Date.today, mentor_id: 1)
 end
 
 
 6.times do
-  Slot.create(start_time: Time.now, duration: 60, mentor_id: 5)
+  Slot.create(duration: 60, start_time: Time.now, date: Date.today, mentor_id: 5)
 end
 
 6.times do
-  Slot.create(start_time: Time.now, duration: 30, mentor_id: 5)
+  Slot.create(duration: 30, start_time: Time.now, date: Date.today, mentor_id: 5)
 end
 
 7.times do
- Slot.create(start_time: Time.now, duration: 120, mentor_id: 2)
+ Slot.create(duration: 120, start_time: Time.now, date: Date.today, mentor_id: 2)
 end
 
 8.times do
-  Slot.create(start_time: Time.now, duration: 90, mentor_id: 3)
+  Slot.create(duration: 90, start_time: Time.now, date: Date.today, mentor_id: 3)
 end
 
 4.times do
-  Slot.create(start_time: Time.now, duration: 30, mentor_id: 4)
+  Slot.create(duration: 30, start_time: Time.now, date: Date.today, mentor_id: 4)
 end
 
-2.times dom
-  Slot.create(start_time: Time.now, duration: 30, mentor_id: 6)
+2.times do
+  Slot.create(duration: 30, start_time: Time.now.strftime("%H:%M:%S"), date: Date.today, mentor_id: 6)
 end
 
 Appointment.create(mentee_id: 6, slot_id: 6)
