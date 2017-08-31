@@ -514,3 +514,1325 @@ puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-31 11:10:22 -0500
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "pair-board_development" does not exist
+):
+  
+activerecord (5.1.3) lib/active_record/connection_adapters/postgresql_adapter.rb:699:in `rescue in connect'
+activerecord (5.1.3) lib/active_record/connection_adapters/postgresql_adapter.rb:695:in `connect'
+activerecord (5.1.3) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.3) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.3) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.3) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.3) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.3) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.3) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(54005356164967095)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170830212317)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "password" character varying NOT NULL, "phone" character varying NOT NULL, "picture_url" character varying, "bio" character varying, "topics" text[], "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830212317"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAppointments (20170830212324)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "start_time" timestamp NOT NULL, "appointment_id" integer NOT NULL, "mentee_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830212324"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSlots (20170830212328)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "slots" ("id" bigserial primary key, "start_time" timestamp NOT NULL, "mentor_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830212328"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-31 16:11:12.399188"], ["updated_at", "2017-08-31 16:11:12.399188"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(54005356164967095)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-08-31 11:11:34 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 168ms (Views: 162.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 11:11:48 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/index" for 127.0.0.1 at 2017-08-31 11:13:28 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering slots/show.html.erb within layouts/application
+  Rendered slots/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2017-08-31 11:14:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-31 11:14:40 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/index" for 127.0.0.1 at 2017-08-31 11:14:43 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering slots/show.html.erb within layouts/application
+  Rendered slots/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/show" for 127.0.0.1 at 2017-08-31 11:14:55 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering slots/show.html.erb within layouts/application
+  Rendered slots/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/show" for 127.0.0.1 at 2017-08-31 11:14:58 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"show"}
+  Rendering slots/show.html.erb within layouts/application
+  Rendered slots/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/index" for 127.0.0.1 at 2017-08-31 11:15:03 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering slots/show.html.erb within layouts/application
+  Rendered slots/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:15:09 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slot" for 127.0.0.1 at 2017-08-31 11:15:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/slot"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:15:37 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:17:09 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h3>Here are all of the upcoming slots!</h3>
+    2: 
+    3: <% @slots.each do |slot| %>
+    4:   <%= slot.start_time %>
+    5: <% end %>
+  
+app/views/slots/index.html.erb:3:in `_app_views_slots_index_html_erb___3094409174040115458_69939257077000'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:19:20 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h3>This is the slot index page.</h3>
+    2: 
+    3: <% @slots.each do |slot| %>
+    4:   <%= slot.start_time %>
+    5: <% end %>
+  
+app/views/slots/index.html.erb:3:in `_app_views_slots_index_html_erb___3094409174040115458_69939266881260'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:19:27 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h3>This is the slot index page.</h3>
+    2: 
+    3: # <% @slots.each do |slot| %>
+    4: #   <%= slot.start_time %>
+    5: # <% end %>
+  
+app/views/slots/index.html.erb:3:in `_app_views_slots_index_html_erb___3094409174040115458_47288525774160'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:21:35 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5: 
+     6: button("create new slot")
+     7: 
+     8: # <% @slots.each do |slot| %>
+     9: #    <%= slot.start_time %>
+    10: # <% end %>
+  
+app/views/slots/index.html.erb:8:in `_app_views_slots_index_html_erb___3094409174040115458_69939267008520'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:22:18 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:24:17 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5: 
+     6: <%= button_to "Create New Slot", new_slot_path %>
+     7: 
+     8: <!-- # <% @slots.each do |slot| %>
+     9: #    <%= slot.start_time %>
+    10: # <% end %> -->
+  
+app/views/slots/index.html.erb:8:in `_app_views_slots_index_html_erb___3094409174040115458_69939114615520'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:24:28 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots/new" for 127.0.0.1 at 2017-08-31 11:24:30 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/slots/new"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:24:43 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:24:45 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:24:49 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots/new" for 127.0.0.1 at 2017-08-31 11:24:54 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/slots/new"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/slots/new" for 127.0.0.1 at 2017-08-31 11:25:36 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/slots/new"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/slots/new" for 127.0.0.1 at 2017-08-31 11:25:40 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/slots/new"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/slots/new" for 127.0.0.1 at 2017-08-31 11:27:34 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/slots/new"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/slots/new" for 127.0.0.1 at 2017-08-31 11:28:29 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/slots/new"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:28:33 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:28:35 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" ORDER BY "slots"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSlot Load (0.6ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" ORDER BY "slots"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSlot Load (0.7ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:35:37 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h3>Sign up to pair!</h3>
+    2: <%= button_to "Create New Slot", new_slot_path(@slot), method: "get" %>
+    3: 
+    4: <% @slots.each do |slot| %>
+    5:   <%= slot.start_time %>
+    6: <% end %>
+  
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___3094409174040115458_69939260092900'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:36:00 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:39:19 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:41:21 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.5ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:46:26 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 11:58:58 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.5ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 151ms (Views: 136.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/slots?class=slot" for 127.0.0.1 at 2017-08-31 11:59:00 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SlotsController):
+  
+actionpack (5.1.3) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/slots?class=slot" for 127.0.0.1 at 2017-08-31 11:59:09 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SlotsController):
+  
+actionpack (5.1.3) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/slots?class=slot" for 127.0.0.1 at 2017-08-31 12:01:49 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SlotsController):
+  
+actionpack (5.1.3) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/slots?class=slot" for 127.0.0.1 at 2017-08-31 12:05:35 -0500
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SlotsController):
+  
+actionpack (5.1.3) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.3) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.3) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.3) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.3) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.3) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.3) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:05:38 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 28ms (Views: 13.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:05:40 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.7ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:05:42 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (1.6ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 30ms (Views: 25.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:05:42 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5022.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pair-board_development"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (114.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pair-board_development"[0m
+  [1m[35m (112.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pair-board_test"[0m
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(54005356164967095)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170830212317)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "password" character varying NOT NULL, "phone" character varying NOT NULL, "picture_url" character varying, "bio" character varying, "topics" text[], "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830212317"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAppointments (20170830212324)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "start_time" timestamp NOT NULL, "slot_id" integer NOT NULL, "mentee_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830212324"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSlots (20170830212328)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "slots" ("id" bigserial primary key, "start_time" timestamp NOT NULL, "mentor_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830212328"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-31 17:09:26.039293"], ["updated_at", "2017-08-31 17:09:26.039293"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(54005356164967095)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSlot Load (0.4ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" WHERE "slots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mSlot Load (0.8ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" WHERE "slots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@tom.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."phone" = $1 LIMIT $2[0m  [["phone", "1234567890"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Leroy"], ["last_name", "Cohen"], ["email", "tom@tom.com"], ["password", "phonograph"], ["phone", "1234567890"], ["created_at", "2017-08-31 17:11:08.790605"], ["updated_at", "2017-08-31 17:11:08.790605"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "slots" ("start_time", "mentor_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["start_time", "2017-08-31 17:11:08.797159"], ["mentor_id", 1], ["created_at", "2017-08-31 17:11:08.812237"], ["updated_at", "2017-08-31 17:11:08.812237"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" WHERE "slots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "appointments" ("start_time", "slot_id", "mentee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["start_time", "2017-08-31 17:11:08.816335"], ["slot_id", 1], ["mentee_id", 1], ["created_at", "2017-08-31 17:11:08.830032"], ["updated_at", "2017-08-31 17:11:08.830032"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mSlot Load (0.9ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAppointment Load (1.0ms)[0m  [1m[34mSELECT  "appointments".* FROM "appointments" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:11:43 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.5ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 157ms (Views: 139.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:12:28 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:12:43 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.7ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:12:44 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (1.0ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:13:39 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/mmoroney/Desktop/Pair-Board/app/views/slots/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+...nd=( link_to "Pair Slot" render(:partial => '_details'));@ou...
+...                               ^):
+  
+app/views/slots/index.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:19:50 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/_details.html.erb (2.1ms)
+  Rendered slots/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for nil:NilClass):
+    1: <%= @slot.start_time %>
+    2: <%= @slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_details.html.erb:1:in `_app_views_slots__details_html_erb__2095293676310689408_69996142667100'
+app/views/slots/index.html.erb:5:in `block in _app_views_slots_index_html_erb___1486315986856578802_69996142784460'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_69996142784460'
+Started GET "/slots/index" for 127.0.0.1 at 2017-08-31 12:19:58 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering slots/show.html.erb within layouts/application
+  Rendered slots/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:20:06 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/_details.html.erb (3.0ms)
+  Rendered slots/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for nil:NilClass):
+    1: <%= @slot.start_time %>
+    2: <%= @slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_details.html.erb:1:in `_app_views_slots__details_html_erb__2095293676310689408_69996143413700'
+app/views/slots/index.html.erb:5:in `block in _app_views_slots_index_html_erb___1486315986856578802_47344095188300'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_47344095188300'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:20:32 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/_details.html.erb (1.9ms)
+  Rendered slots/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for nil:NilClass):
+    1: <%= @slot.start_time %>
+    2: <%= @slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_details.html.erb:1:in `_app_views_slots__details_html_erb__2095293676310689408_47344117556980'
+app/views/slots/index.html.erb:5:in `block in _app_views_slots_index_html_erb___1486315986856578802_47344117786980'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_47344117786980'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:21:28 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered collection of slots/_slot.html.erb [1 times] (2.9ms)
+  Rendered slots/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for nil:NilClass):
+    1: <%= @slot.start_time %>
+    2: <%= @slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_slot.html.erb:1:in `_app_views_slots__slot_html_erb__1886813883361587330_69996138474560'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_69996138752660'
+Started GET "/slots/index" for 127.0.0.1 at 2017-08-31 12:21:32 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"index"}
+  Rendering slots/show.html.erb within layouts/application
+  Rendered slots/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/__web_console/repl_sessions/12c73ff6cd0ff0ba9533b76f8a83a691/trace" for 127.0.0.1 at 2017-08-31 12:23:36 -0500
+Started POST "/__web_console/repl_sessions/12c73ff6cd0ff0ba9533b76f8a83a691/trace" for 127.0.0.1 at 2017-08-31 12:23:36 -0500
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:28:00 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered collection of slots/_slot.html.erb [1 times] (3.2ms)
+  Rendered slots/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for nil:NilClass):
+    1: <%= @slot.start_time %>
+    2: <%= @slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_slot.html.erb:1:in `_app_views_slots__slot_html_erb__1886813883361587330_69996142215800'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_69996142424580'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:28:10 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/_slot.html.erb (2.6ms)
+  Rendered slots/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for nil:NilClass):
+    1: <%= @slot.start_time %>
+    2: <%= @slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_slot.html.erb:1:in `_app_views_slots__slot_html_erb__1886813883361587330_69996143167920'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_69996142295880'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:28:59 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/_slot.html.erb (2.2ms)
+  Rendered slots/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for nil:NilClass):
+    1: <%= @slot.start_time %>
+    2: <%= @slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_slot.html.erb:1:in `_app_views_slots__slot_html_erb__1886813883361587330_69996129929880'
+app/views/slots/index.html.erb:5:in `block in _app_views_slots_index_html_erb___1486315986856578802_69996130197780'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_69996130197780'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:29:21 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/_slot.html.erb (2.9ms)
+  Rendered slots/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for nil:NilClass):
+    1: <%= @slot.start_time %>
+    2: <%= @slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_slot.html.erb:1:in `_app_views_slots__slot_html_erb__1886813883361587330_69996140898020'
+app/views/slots/index.html.erb:5:in `block in _app_views_slots_index_html_erb___1486315986856578802_69996141135220'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_69996141135220'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:29:56 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.7ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/_slot.html.erb (3.5ms)
+  Rendered slots/index.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for nil:NilClass):
+    1: <%= slot.start_time %>
+    2: <%= slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_slot.html.erb:1:in `_app_views_slots__slot_html_erb__1886813883361587330_69996143210420'
+app/views/slots/index.html.erb:5:in `block in _app_views_slots_index_html_erb___1486315986856578802_69996024092060'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_69996024092060'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:30:53 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    4: 
+    5: 
+    6: <% @slots.each do |slot| %>
+    7:   <%= render @slot %>
+    8: <% end %>
+    9: 
+   10: <h2>Top Mentors</h2>
+  
+app/views/slots/index.html.erb:7:in `block in _app_views_slots_index_html_erb___1486315986856578802_47344121623040'
+app/views/slots/index.html.erb:6:in `_app_views_slots_index_html_erb___1486315986856578802_47344121623040'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:31:17 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial slots/__slot, application/__slot with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/mmoroney/Desktop/Pair-Board/app/views"
+):
+    4: 
+    5: 
+    6: <% @slots.each do |slot| %>
+    7:   <%= render "_slot" %>
+    8: <% end %>
+    9: 
+   10: <h2>Top Mentors</h2>
+  
+app/views/slots/index.html.erb:7:in `block in _app_views_slots_index_html_erb___1486315986856578802_69996139994960'
+app/views/slots/index.html.erb:6:in `_app_views_slots_index_html_erb___1486315986856578802_69996139994960'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:31:32 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial slots/__slot, application/__slot with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/mmoroney/Desktop/Pair-Board/app/views"
+):
+    4: 
+    5: 
+    6: <% @slots.each do |slot| %>
+    7:   <%= render partial: "_slot" %>
+    8: <% end %>
+    9: 
+   10: <h2>Top Mentors</h2>
+  
+app/views/slots/index.html.erb:7:in `block in _app_views_slots_index_html_erb___1486315986856578802_69996143340820'
+app/views/slots/index.html.erb:6:in `_app_views_slots_index_html_erb___1486315986856578802_69996143340820'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:31:48 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    4: 
+    5: 
+    6: <% @slots.each do |slot| %>
+    7:   <%= render partial: @slot %>
+    8: <% end %>
+    9: 
+   10: <h2>Top Mentors</h2>
+  
+app/views/slots/index.html.erb:7:in `block in _app_views_slots_index_html_erb___1486315986856578802_69996128943000'
+app/views/slots/index.html.erb:6:in `_app_views_slots_index_html_erb___1486315986856578802_69996128943000'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:34:32 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (2.6ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (28.2ms)
+  Rendered slots/index.html.erb within layouts/application (35.8ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 6.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"slots", :id=>nil}, missing required keys: [:id]):
+    1: <%= slot.start_time %>
+    2: <%= slot.mentor.first_name %>
+    3: <%= button_to "See Details", slot_path(@slot) %>
+  
+app/views/slots/_slot.html.erb:3:in `_app_views_slots__slot_html_erb__1886813883361587330_69996141717260'
+app/views/slots/index.html.erb:5:in `block in _app_views_slots_index_html_erb___1486315986856578802_69996141958120'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_69996141958120'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:34:45 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.5ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (3.4ms)
+  Rendered slots/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:35:49 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.5ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  Rendered slots/_slot.html.erb (6.7ms)
+  Rendered slots/index.html.erb within layouts/application (12.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `strf' for Thu, 31 Aug 2017 17:11:08 UTC +00:00:Time):
+    1: <%= slot.start_time.strf("%H:%M:%S") %>
+    2: <%= slot.mentor.first_name %>
+  
+app/views/slots/_slot.html.erb:1:in `_app_views_slots__slot_html_erb__1886813883361587330_69996136687800'
+app/views/slots/index.html.erb:5:in `block in _app_views_slots_index_html_erb___1486315986856578802_69996137008380'
+app/views/slots/index.html.erb:4:in `_app_views_slots_index_html_erb___1486315986856578802_69996137008380'
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:36:17 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (4.6ms)
+  Rendered slots/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.8ms)
+
+

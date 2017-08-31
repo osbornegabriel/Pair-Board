@@ -1,1 +1,10 @@
-<h3>Here are all of the upcoming slots!</h3>
+<h3>Sign up to pair!</h3>
+<%= button_to "Create New Slot", new_slot_path(@slot), method: "get" %>
+
+<% @slots.each do |slot| %>
+  <%= render partial: "slot", locals: { slot: slot } %>
+<% end %>
+
+<h2>Top Mentors</h2>
+
+<h2>Top Mentees</h2>
