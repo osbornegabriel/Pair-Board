@@ -1,1 +1,21 @@
 <h3>I'm a user! See my stuff!</h3>
+<p><%= link_to @user.picture_url %></p>
+<p><%= @user.first_name %></p>
+<p><%= @user.bio %></p>
+<% @user.topics.each do |topic| %>
+	<p>I like to mentor on <%= topic %></p>
+<% end %>
+<div>
+	<p>Upcoming mentoring appointments</p>
+	<% @user.mentoring_appointments.each do |appointment| %>
+		<%= appointment %>
+	<% end %>
+</div>
+
+<div>
+	<p>Upcoming pairing applintments</p>
+	<% @user.appointments_with_mentors.each do |appointment| %>
+		<%= appointment %>
+	<% end %>
+</div>
+
