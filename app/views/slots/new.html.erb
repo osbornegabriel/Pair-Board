@@ -1,5 +1,6 @@
-<h3>Create a mentoring time</h3>
+<div class="sm-container">
+  <h3>Create a mentoring time</h3>
+  <%= render 'form', slot: @slot %>
+</div>
 
-<%= render 'form', slot: @slot %>
-
-<%= link_to 'Home', slots_path %>
+<p><%= link_to 'Home', slots_path %></p>
