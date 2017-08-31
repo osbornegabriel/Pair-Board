@@ -9,4 +9,5 @@
     <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %><br>
     <%= f.submit "Sign Up!", class: "button" %>
   <% end %>
+  <span class="extra-info">Already have an account? <%= link_to 'Sign in!'.html_safe, new_session_url %></span>
 </div>
