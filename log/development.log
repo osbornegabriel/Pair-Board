@@ -1184,3 +1184,232 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 89ms (Views: 75.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-31 13:34:55 -0500
+  
+ActionController::RoutingError (undefined method `helpers' for main:Object):
+  
+app/helpers/users_helper.rb:1:in `<top (required)>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-31 13:35:36 -0500
+  
+ActionController::RoutingError (Couldn't find UsersHelper, expected it to be defined in helpers/users_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-31 13:35:53 -0500
+  
+ActionController::RoutingError (Couldn't find UsersHelper, expected it to be defined in helpers/users_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-31 13:36:16 -0500
+  
+ActionController::RoutingError (Couldn't find UsersHelper, expected it to be defined in helpers/users_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-31 14:46:32 -0500
+  
+ActionController::RoutingError (Couldn't find UsersHelper, expected it to be defined in helpers/users_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-31 14:58:56 -0500
+  
+ActionController::RoutingError (Couldn't find UsersHelper, expected it to be defined in helpers/users_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/sessions_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-08-31 15:04:13 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.9ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <div class="sm-container">
+    2:   <h3 id="new-session-head">Welcome Back!</h3>
+    3:   <%= form_for @user do |f| %>
+    4:     <%= f.text_field :email, placeholder: "Email" %><br>
+    5:     <%= f.password_field :password, placeholder: "Password" %>
+    6:     <%= f.submit "Log in", class: "button" %>
+  
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb___502182422613397640_70201872422560'
+app/controllers/sessions_controller.rb:3:in `new'
+Started GET "/" for 127.0.0.1 at 2017-08-31 15:07:18 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 265ms (Views: 240.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 15:11:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 202ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 15:14:32 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (54.5ms)
+Completed 200 OK in 351ms (Views: 328.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 15:14:47 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 105ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 15:15:00 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 109ms (Views: 108.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-31 15:15:41 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (105.0ms)
+Completed 500 Internal Server Error in 134ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "Email":String):
+    1: <div class="sm-container">
+    2:   <h3 id="new-session-head">Welcome Back!</h3>
+    3:   <%= form_tag sessions_path do %>
+    4:     <%= text_field_tag :email, nil, "Email" %><br>
+    5:     <%= password_field_tag :password, nil, placeholder: "Password" %>
+    6:     <%= submit_tag "Log in", class: "button" %>
+    7:   <% end %>
+  
+app/views/sessions/new.html.erb:4:in `block in _app_views_sessions_new_html_erb___502182422613397640_70201864247020'
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb___502182422613397640_70201864247020'
+app/controllers/sessions_controller.rb:3:in `new'
+Started GET "/" for 127.0.0.1 at 2017-08-31 15:16:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 140ms (Views: 129.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:16:42 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 479ms (Views: 101.3ms | ActiveRecord: 121.2ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2017-08-31 15:16:50 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 94ms (Views: 92.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:16:59 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 79ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:22:07 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 183ms (Views: 153.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:24:11 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (67.8ms)
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
+     5:     <%= f.text_field :last_name, placeholder: "Last Name" %><br>
+     6:     <%= f.text_field :email, placeholder: "Email" %><br>
+     7:     <%= f.text_field :phone, placeholder: "Phone ('1234567890')" %><br>
+     8:     <%= f.password_field :password, nil, placeholder: "Password" %><br>
+     9:     <%= f.password_field :password_confirmation, nil, placeholder: "Confirm Password" %><br>
+    10:     <%= f.submit "Sign Up!", class: "button" %>
+    11:   <% end %>
+  
+app/views/users/new.html.erb:8:in `block in _app_views_users_new_html_erb__3103202929846626996_70201921909260'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__3103202929846626996_70201921909260'
+app/controllers/users_controller.rb:5:in `new'
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:24:22 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 377ms (Views: 325.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:27:51 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (88.9ms)
+Completed 200 OK in 401ms (Views: 339.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:28:03 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (88.8ms)
+Completed 200 OK in 473ms (Views: 424.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:37:11 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (156.6ms)
+Completed 200 OK in 480ms (Views: 447.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:43:30 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 260ms (Views: 229.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-08-31 15:43:39 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 161ms (Views: 138.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2017-08-31 15:43:42 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 108ms (Views: 103.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2017-08-31 15:43:53 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RK63SvM2hdxsm6fNzt2Pmhj6aFD1FFfPRT9dFjwNtTKdAIN7XAtYDVcwMTe+wffRuyj3rG9a5URMMnOnCgPOEQ==", "email"=>"tom@tom.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (74.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tom@tom.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/slots
+Completed 302 Found in 894ms (ActiveRecord: 113.6ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 15:43:54 -0500
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 116ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+
+

@@ -12,6 +12,10 @@
   color: white;
 }
 
+#new-session-head {
+  font-size: 2.4em;
+}
+
 #new-user-head {
   font-size: 2.4em;
 }
@@ -45,6 +49,6 @@
 }
 
 .extra-info {
-  padding: 27%;
+  /*padding: 27%;*/
   color: #19ABB5;
 }
