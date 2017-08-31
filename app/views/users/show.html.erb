@@ -2,17 +2,20 @@
 <p><%= image_tag @user.picture_url %></p>
 <p><%= @user.first_name %></p>
 <p><%= @user.bio %></p>
-<% @user.topics.each do |topic| %>
-	<p>I like to mentor on <%= topic %></p>
-<% end %>
-<div>
-	<p>Upcoming mentoring appointments</p>
+<p>I like to mentor on...</p>
+<ul>
+	<% @user.topics.each do |topic| %>
+		<li><p> <%= topic %></p></li>
+	<% end %>
+</ul>
+<div class="left">
+	<p>Upcoming mentoring slots</p>
 	<% @user.mentoring_appointments.each do |appointment| %>
 		<%= appointment %>
 	<% end %>
 </div>
 
-<div>
+<div class="right">
 	<p>Upcoming pairing appointments</p>
 	<% @user.appointments_with_mentors.each do |appointment| %>
 		<%= appointment %>

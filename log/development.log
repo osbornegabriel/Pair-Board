@@ -1098,3 +1098,98 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/users/1" for 127.0.0.1 at 2017-08-31 15:21:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAppointment Load (2.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "slots" ON "appointments"."slot_id" = "slots"."id" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  Rendered users/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-08-31 15:22:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAppointment Load (2.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "slots" ON "appointments"."slot_id" = "slots"."id" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 32ms (Views: 27.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-08-31 15:22:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAppointment Load (2.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "slots" ON "appointments"."slot_id" = "slots"."id" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  Rendered users/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 31ms (Views: 25.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-08-31 16:04:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (203.2ms)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 8.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_user_path' for #<#<Class:0x007f9e10352b80>:0x007f9e10350f60>
+Did you mean?  edit_slot_path
+               new_user_path):
+    1: <h3>I'm a user! See my stuff!</h3>
+    2: <p><%= link_to edit_user_path(@user) %>"</p>
+    3: <p><%= image_tag @user.picture_url %></p>
+    4: <p><%= @user.first_name %></p>
+    5: <p><%= @user.bio %></p>
+  
+app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb___2644208358721540233_70158426741260'
+Started GET "/users/1" for 127.0.0.1 at 2017-08-31 16:06:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (215.7ms)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_user_path' for #<#<Class:0x007f9e10352b80>:0x007f9e18321398>
+Did you mean?  edit_slot_path
+               new_user_path):
+    1: <h3>I'm a user! See my stuff!</h3>
+    2: <p><%= edit_user_path(@user) %>"</p>
+    3: <p><%= image_tag @user.picture_url %></p>
+    4: <p><%= @user.first_name %></p>
+    5: <p><%= @user.bio %></p>
+  
+app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb___2644208358721540233_70158493748920'
+Started GET "/users/1" for 127.0.0.1 at 2017-08-31 16:08:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "slots" ON "appointments"."slot_id" = "slots"."id" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[36mAppointment Load (4.8ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  Rendered users/show.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 89ms (Views: 71.5ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-08-31 16:08:57 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mAppointment Load (4.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" INNER JOIN "slots" ON "appointments"."slot_id" = "slots"."id" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  Rendered users/show.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 114ms (Views: 44.6ms | ActiveRecord: 4.9ms)
+
+
