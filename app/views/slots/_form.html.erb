@@ -1,0 +1,26 @@
+<h5>I'm the form!</h5>
+
+<%= form_with(model: slot, local: true) do |form| %>
+  <% if slot.errors.any? %>
+    <h3><%= pluralize(slot.errors.count, "error") %> prohibited this slot from being saved:</h3>
+    <ul>
+      <% slot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form.label :date %>
+  <%= form.date_field :date, id: :start_date %>
+
+  <%= form.label :start_time %>
+  <%= form.time_field :start_time, id: :start_time %>
+
+  <%= form.select :duration_string, ["30 minutes", "1 hour", "1 hour 30 minutes", "2 hours"] %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
