@@ -1,6 +1,7 @@
 class Slot < ApplicationRecord
-  belongs_to :mentee, class_name "User"
-  belongs_to :appointment
+  has_many :appointments
+  belongs_to :mentor, class_name: "User"
+  has_many :mentees, through: :appointments, source: :mentee
 
-  validates :start_time, :appointment_id, presence: true
+  validates :start_time, :mentor_id, presence: true
 end
