@@ -18,5 +18,5 @@
 
 <% @top_mentees.each do |mentee| %>
   <%= mentee.first_name%>
-  <%= mentee.appointments.count %><br>
+  <%= mentee.appointments_with_mentors.count %><br>
 <% end %>
