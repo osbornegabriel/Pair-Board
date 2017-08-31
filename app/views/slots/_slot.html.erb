@@ -1,2 +1,3 @@
 <%= slot.start_time.strftime("%H:%M:%S") %>
 <%= slot.mentor.first_name %>
+<%= button_to "See Details", slot_path(slot), method: "get" %>

@@ -2,9 +2,19 @@
 <%= button_to "Create New Slot", new_slot_path(@slot), method: "get" %>
 
 <% @slots.each do |slot| %>
-  <%= render partial: "slot", locals: { slot: slot } %>
+  <div class="slot">
+	<%= render partial: "slot", locals: { slot: slot } %>
+  </div>
 <% end %>
 
 <h2>Top Mentors</h2>
 
+<% @top_mentors.each do |mentor| %>
+  <%= mentor.first_name%>
+<% end %>
+
 <h2>Top Mentees</h2>
+
+<% @top_mentees.each do |mentee| %>
+  <%= mentee.first_name%>
+<% end %>
