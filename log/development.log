@@ -514,3 +514,481 @@ puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-08-31 11:31:47 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 310ms (Views: 300.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:31:56 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (19.5ms)
+  Rendered slots/new.html.erb within layouts/application (21.6ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 10.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :start_date:Symbol):
+     9:   <% end %>
+    10: 
+    11:   <% form.label :date %>
+    12:   <% form.date_select slot,:start_date %>
+    13: 
+    14: 
+    15: <% end %>
+  
+app/views/slots/_form.html.erb:12:in `block in _app_views_slots__form_html_erb___2067366548510839211_70110076374580'
+app/views/slots/_form.html.erb:1:in `_app_views_slots__form_html_erb___2067366548510839211_70110076374580'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110076600560'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:32:08 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (5.7ms)
+  Rendered slots/new.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :start_date:Symbol):
+     9:   <% end %>
+    10: 
+    11:   <% form.label :date %>
+    12:   <% form.date_select slot, :start_date %>
+    13: 
+    14: 
+    15: <% end %>
+  
+app/views/slots/_form.html.erb:12:in `block in _app_views_slots__form_html_erb___2067366548510839211_70110120893300'
+app/views/slots/_form.html.erb:1:in `_app_views_slots__form_html_erb___2067366548510839211_70110120893300'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110129571760'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:32:30 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (11.3ms)
+  Rendered slots/new.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :start_date:Symbol):
+     9:   <% end %>
+    10: 
+    11:   <% form.label :date %>
+    12:   <% form.date_select :slot, :start_date %>
+    13: 
+    14: 
+    15: <% end %>
+  
+app/views/slots/_form.html.erb:12:in `block in _app_views_slots__form_html_erb___2067366548510839211_70110073289880'
+app/views/slots/_form.html.erb:1:in `_app_views_slots__form_html_erb___2067366548510839211_70110073289880'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110067142240'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:32:37 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (4.3ms)
+  Rendered slots/new.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..3)):
+     9:   <% end %>
+    10: 
+    11:   <% form.label :date %>
+    12:   <% form.date_select %>
+    13: 
+    14: 
+    15: <% end %>
+  
+app/views/slots/_form.html.erb:12:in `block in _app_views_slots__form_html_erb___2067366548510839211_70110068637620'
+app/views/slots/_form.html.erb:1:in `_app_views_slots__form_html_erb___2067366548510839211_70110068637620'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110068735180'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:36:05 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (4.7ms)
+  Rendered slots/new.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+     9:   <% end %>
+    10: 
+    11:   <% form.label :date %>
+    12:   <% form.date_field %>
+    13: 
+    14: 
+    15: <% end %>
+  
+app/views/slots/_form.html.erb:12:in `block in _app_views_slots__form_html_erb___2067366548510839211_70110104861580'
+app/views/slots/_form.html.erb:1:in `_app_views_slots__form_html_erb___2067366548510839211_70110104861580'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110077145200'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:36:48 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (108.5ms)
+  Rendered slots/new.html.erb within layouts/application (111.3ms)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `select_date' for #<ActionView::Helpers::FormBuilder:0x007f879297b230>
+Did you mean?  select):
+     9:   <% end %>
+    10: 
+    11:   <% form.label :date %>
+    12:   <% form.select_date %>
+    13: 
+    14: 
+    15: <% end %>
+  
+app/views/slots/_form.html.erb:12:in `block in _app_views_slots__form_html_erb___2067366548510839211_70110128427640'
+app/views/slots/_form.html.erb:1:in `_app_views_slots__form_html_erb___2067366548510839211_70110128427640'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110128491980'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:36:55 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.2ms)
+  Rendered slots/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 28ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:37:45 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (119.2ms)
+  Rendered slots/new.html.erb within layouts/application (121.1ms)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `select_date' for #<ActionView::Helpers::FormBuilder:0x007f878d926de8>
+Did you mean?  select):
+     9:   <% end %>
+    10: 
+    11:   <%= form.label :date %>
+    12:   <%= form.select_date %>
+    13: 
+    14: 
+    15: <% end %>
+  
+app/views/slots/_form.html.erb:12:in `block in _app_views_slots__form_html_erb___2067366548510839211_70110075323580'
+app/views/slots/_form.html.erb:1:in `_app_views_slots__form_html_erb___2067366548510839211_70110075323580'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110075551920'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:43:44 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (6.2ms)
+  Rendered slots/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:44:05 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.8ms)
+  Rendered slots/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:44:14 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.6ms)
+  Rendered slots/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:44:23 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (3.3ms)
+  Rendered slots/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:45:14 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.4ms)
+  Rendered slots/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:46:10 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.3ms)
+  Rendered slots/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:46:12 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.5ms)
+  Rendered slots/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:46:37 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.5ms)
+  Rendered slots/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:46:50 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.6ms)
+  Rendered slots/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:46:52 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.5ms)
+  Rendered slots/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:47:38 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.7ms)
+  Rendered slots/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:47:47 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.7ms)
+  Rendered slots/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:54:28 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.7ms)
+  Rendered slots/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.3ms)
+
+
+  
+SyntaxError (/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:21: syntax error, unexpected '<', expecting ')'
+  <div class="actions">
+   ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:22: syntax error, unexpected '<'
+    <%= form.submit );@output_buffer.safe_append='
+     ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:27: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:29: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/slots/_form.html.erb:21: syntax error, unexpected '<', expecting ')'
+app/views/slots/_form.html.erb:22: syntax error, unexpected '<'
+app/views/slots/_form.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/_form.html.erb:27: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/slots/_form.html.erb:29: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110120506380'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:54:41 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (127.5ms)
+  Rendered slots/new.html.erb within layouts/application (130.5ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `radio_button_tag' for #<ActionView::Helpers::FormBuilder:0x007f8791b62090>
+Did you mean?  radio_button):
+    13:   <%= form.label :start_time %>
+    14:   <%= form.number_field :start_time, id: :start_time %>
+    15: 
+    16:   <%= form.radio_button_tag(:duration, "30 minutes") %>
+    17:   <%= label_tag(:duation_30min, "30 minutes") %>
+    18: 
+    19: 
+  
+app/views/slots/_form.html.erb:16:in `block in _app_views_slots__form_html_erb___2067366548510839211_70110070283340'
+app/views/slots/_form.html.erb:3:in `_app_views_slots__form_html_erb___2067366548510839211_70110070283340'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110064770140'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:54:51 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (9.1ms)
+  Rendered slots/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:55:34 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (13.8ms)
+  Rendered slots/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 11:58:10 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (5.2ms)
+  Rendered slots/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:04:10 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (6.6ms)
+  Rendered slots/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:05:49 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.9ms)
+  Rendered slots/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:19: syntax error, unexpected '}', expecting =>
+...duration", options: {"30 mins"}) );@output_buffer.safe_appen...
+...                               ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:35: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/slots/_form.html.erb:19: syntax error, unexpected '}', expecting =>
+app/views/slots/_form.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/_form.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/slots/_form.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110119663120'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:06:12 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.3ms)
+  Rendered slots/new.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:19: syntax error, unexpected tLABEL, expecting ')'
+...ct("slot", "duration") options: {"30 mins"}));@output_buffer...
+...                               ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:19: syntax error, unexpected '}', expecting =>
+...duration") options: {"30 mins"}));@output_buffer.safe_append...
+...                               ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:35: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/slots/_form.html.erb:19: syntax error, unexpected tLABEL, expecting ')'
+app/views/slots/_form.html.erb:19: syntax error, unexpected '}', expecting =>
+app/views/slots/_form.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/_form.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/slots/_form.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110106501040'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:07:36 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.0ms)
+  Rendered slots/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:19: syntax error, unexpected '}', expecting =>
+...duration", choices: {"30 mins"}) );@output_buffer.safe_appen...
+...                               ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:35: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/slots/_form.html.erb:19: syntax error, unexpected '}', expecting =>
+app/views/slots/_form.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/_form.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/slots/_form.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110129277520'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:08:01 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (1.4ms)
+  Rendered slots/new.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:19: syntax error, unexpected '}', expecting =>
+...duration", choices: {"30 mins"}) ) );@output_buffer.safe_app...
+...                               ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/views/slots/_form.html.erb:35: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/slots/_form.html.erb:19: syntax error, unexpected '}', expecting =>
+app/views/slots/_form.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/_form.html.erb:33: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/slots/_form.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb__3083039861993787763_70110129670000'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:08:18 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.8ms)
+  Rendered slots/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:08:27 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.3ms)
+  Rendered slots/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:08:35 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.9ms)
+  Rendered slots/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:13:21 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (5.8ms)
+  Rendered slots/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:13:45 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.5ms)
+  Rendered slots/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
