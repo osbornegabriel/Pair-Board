@@ -16,15 +16,16 @@ ActiveRecord::Schema.define(version: 20170830212328) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.datetime "start_time", null: false
-    t.integer "appointment_id", null: false
+    t.time "start_time", null: false
+    t.integer "slot_id", null: false
     t.integer "mentee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "slots", force: :cascade do |t|
-    t.datetime "start_time", null: false
+    t.time "start_time", null: false
+    t.date "date", null: false
     t.integer "mentor_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
