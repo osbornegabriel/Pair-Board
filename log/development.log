@@ -1033,3 +1033,294 @@ Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
 ActiveModel::UnknownAttributeError (unknown attribute 'start_date' for Slot.):
   
 app/controllers/slots_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (187.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pair-board_development"[0m
+  [1m[35m (137.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "pair-board_test"[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(54005356164967095)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170830212317)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "password" character varying NOT NULL, "phone" character varying NOT NULL, "picture_url" character varying, "bio" character varying, "topics" text[], "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830212317"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAppointments (20170830212324)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" bigserial primary key, "start_time" timestamp NOT NULL, "slot_id" integer NOT NULL, "mentee_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830212324"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSlots (20170830212328)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "slots" ("id" bigserial primary key, "start_time" time NOT NULL, "date" date NOT NULL, "mentor_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170830212328"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-31 17:34:47.229715"], ["updated_at", "2017-08-31 17:34:47.229715"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(54005356164967095)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/slots" for 127.0.0.1 at 2017-08-31 12:34:53 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SlotsController#index as HTML
+  Rendering slots/index.html.erb within layouts/application
+  Rendered slots/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 212ms (Views: 199.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:34:57 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"epnRK22ikID+AeEHakczd1FIjuLd1ggJZAmp+KKQfEfm5mllDOFq7Ps+DCL0SwXCbtcDy2zVoDRqI4t0U24FYQ==", "slot"=>{"start_date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/models/slot.rb:11: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/models/slot.rb:11: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/slots_controller.rb:8:in `create'
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:35:13 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"epnRK22ikID+AeEHakczd1FIjuLd1ggJZAmp+KKQfEfm5mllDOFq7Ps+DCL0SwXCbtcDy2zVoDRqI4t0U24FYQ==", "slot"=>{"start_date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.5ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'start_date' for Slot.):
+  
+app/controllers/slots_controller.rb:8:in `create'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:35:34 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (15.7ms)
+  Rendered slots/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 50ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:35:35 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i2k8wE+SHMc4NSBgJKbjVD5tJ2PPnswInhJquQe9kisXFoSOLtHmqz0KzUW6qtXhAfKqSn6dZDWQOEg19kPrDQ==", "slot"=>{"start_date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'start_date' for Slot.):
+  
+app/controllers/slots_controller.rb:8:in `create'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:36:13 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (5.9ms)
+  Rendered slots/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 50ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:36:14 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lu8NJfrZDCaYKYchc3gQOhlN5zuY7Hu4EdIODPoiKfuykLVrm5r2Sp0WagTtdCaPJtJqEinv04Uf+CyAC9xQ3Q==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'duration' for Slot.):
+  
+app/controllers/slots_controller.rb:8:in `create'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:41:44 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.7ms)
+  Rendered slots/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 33ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:41:45 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RaxqLi7VfjMTxSevG98FUMKFzDrR+TIBwNSXpxxGoj3Z09JgT5aEXxb6yoqF0zPl/RpBE2D6mjzO/rUr7bjbGw==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+No template found for SlotsController#create, rendering head :no_content
+Completed 204 No Content in 76ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:42:13 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (3.5ms)
+  Rendered slots/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 38ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:42:14 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IzXzP60tBptVkX2EztzYpmTsWcySzCzjbu23CjC2WaS/SktxzG7891CukKFQ0O4TW3PU5SPPhN5gx5WGwUgggg==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+No template found for SlotsController#create, rendering head :no_content
+Completed 204 No Content in 75ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:47:34 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (3.3ms)
+  Rendered slots/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 36ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:47:35 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yYDsArFNndgfJhFUNGqMJXB329S2+PM8wy01XN7SFO1V/1RM0A5ntBoZ/HGqZrqQT+hW/Qf7WwHNBxfQLyxtyw==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `number_of_slots' for #<Slot:0x007fa3dcc9dd58>):
+  
+app/controllers/slots_controller.rb:9:in `create'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:48:01 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (2.6ms)
+  Rendered slots/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 35ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:48:02 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UKryK0Xoodxxo4lRN4o9D2rLK47FiG8261LojqCPe4PM1UplJKtbsHScZHSphgu6VVSmp3SLxwvleMoCUXECpQ==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+No template found for SlotsController#create, rendering head :no_content
+Completed 204 No Content in 77ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:48:27 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (3.2ms)
+  Rendered slots/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 39ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:48:28 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OTtNA4Tl7DnLfz0yHDSNa+uHTGAYbe6PjYdp+OV1PZilRPVN5aYWVc5A0BeCOLve1BjBSaluRrKDrUt0FItEvg==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+No template found for SlotsController#create, rendering head :no_content
+Completed 204 No Content in 73ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:48:32 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (3.9ms)
+  Rendered slots/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 12:48:35 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hicmmKwT+NWYg/1qefBYKl8+Fy4caBey1HUBzR//30MaWJ7WzVACuZ28EE/n/G6fYKGaB61rv4/aXyNB7gGmZQ==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"2 hours"}, "commit"=>"Create Slot"}
+No template found for SlotsController#create, rendering head :no_content
+Completed 204 No Content in 74ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:52:08 -0500
+Processing by SlotsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/models/slot.rb:11: syntax error, unexpected ')'
+      Appointment.create(slot: self, start_time: (:start_time + (i*))
+                                                                    ^
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/models/slot.rb:25: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/models/slot.rb:11: syntax error, unexpected ')'
+app/models/slot.rb:25: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/slots_controller.rb:4:in `new'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 12:53:12 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (3.7ms)
+  Rendered slots/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 50ms (Views: 24.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 13:00:03 -0500
+Processing by SlotsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/models/slot.rb:14: syntax error, unexpected keyword_end, expecting ')'
+/Users/gabrielosborne/Desktop/DBC/phase-3/client-project/Pair-Board/app/models/slot.rb:27: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/models/slot.rb:14: syntax error, unexpected keyword_end, expecting ')'
+app/models/slot.rb:27: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/slots_controller.rb:4:in `new'
+Started GET "/slots/new" for 127.0.0.1 at 2017-08-31 13:03:28 -0500
+Processing by SlotsController#new as HTML
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (3.1ms)
+  Rendered slots/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 37ms (Views: 20.6ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 13:03:30 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3DOCQ+mzmsQSSHSG0BeTnv/kR6NYzHihy1XHL1CeTb1ATDoNiPBgqBd3maNOG6UrwHvKiunP0JzFf+WjoWA0mw==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"30 minutes"}, "commit"=>"Create Slot"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `number_of_slots' for #<Slot:0x007fa3dfc94b38>):
+  
+app/controllers/slots_controller.rb:9:in `create'
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 13:03:47 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3DOCQ+mzmsQSSHSG0BeTnv/kR6NYzHihy1XHL1CeTb1ATDoNiPBgqBd3maNOG6UrwHvKiunP0JzFf+WjoWA0mw==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"1 hour 30 minutes"}, "commit"=>"Create Slot"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (4.2ms)
+  Rendered slots/new.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 2)):
+    4:   <% if slot.errors.any? %>
+    5:     <h3><%= pluralize(slot.errors.count, "error") %> prohibited this slot from being saved:</h3>
+    6:     <ul>
+    7:       <% slot.errors.full_message.each do |message| %>
+    8:         <li><%= message %></li>
+    9:       <% end %>
+   10:     </ul>
+  
+app/views/slots/_form.html.erb:7:in `block in _app_views_slots__form_html_erb___2500661820279283262_70170919062500'
+app/views/slots/_form.html.erb:3:in `_app_views_slots__form_html_erb___2500661820279283262_70170919062500'
+app/views/slots/new.html.erb:3:in `_app_views_slots_new_html_erb___3051578877382992528_70170919443120'
+app/controllers/slots_controller.rb:12:in `create'
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 13:04:13 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3DOCQ+mzmsQSSHSG0BeTnv/kR6NYzHihy1XHL1CeTb1ATDoNiPBgqBd3maNOG6UrwHvKiunP0JzFf+WjoWA0mw==", "slot"=>{"date"=>"", "start_time"=>"", "duration"=>"1 hour 30 minutes"}, "commit"=>"Create Slot"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (3.5ms)
+  Rendered slots/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/slots" for 127.0.0.1 at 2017-08-31 13:04:44 -0500
+Processing by SlotsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a13eUbSxoIUA9Nl8gk/heaI7npYMjgqbEDC+QC2pVvv3ImYf1fJa6QXLNFkcQ9fMnaQTv72NoqYeGpzM3Fcv3Q==", "slot"=>{"date"=>"2017-08-31", "start_time"=>"15:58", "duration"=>"1 hour"}, "commit"=>"Create Slot"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering slots/new.html.erb within layouts/application
+  Rendered slots/_form.html.erb (7.5ms)
+  Rendered slots/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 32ms (Views: 24.4ms | ActiveRecord: 0.7ms)
+
+
