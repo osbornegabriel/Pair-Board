@@ -1,5 +1,5 @@
 class Slot < ApplicationRecord
-  has_many :appointments
+  has_one :appointment
   belongs_to :mentor, class_name: "User"
   has_many :mentees, through: :appointments, source: :mentee
 
