@@ -1,10 +1,12 @@
-<h3>Join the Party!</h3>
-<%= form_for @user do |f| %>
-  <%= f.text_field :first_name, placeholder: "First Name" %><br>
-  <%= f.text_field :last_name, placeholder: "Last Name" %><br>
-  <%= f.text_field :email, placeholder: "Email" %><br>
-  <%= f.text_field :phone, placeholder: "Phone Number" %><br>
-  <%= f.password_field :password, placeholder: "Password" %><br>
-  <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %><br>
-  <%= f.submit "Sign Up!" %>
-<% end %>
+<div class="sm-container">
+  <h3 id="new-user-head">Join the Party!</h3>
+  <%= form_for @user do |f| %>
+    <%= f.text_field :first_name, placeholder: "First Name" %><br>
+    <%= f.text_field :last_name, placeholder: "Last Name" %><br>
+    <%= f.text_field :email, placeholder: "Email" %><br>
+    <%= f.text_field :phone, placeholder: "Phone ('1234567890')" %><br>
+    <%= f.password_field :password, placeholder: "Password" %><br>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %><br>
+    <%= f.submit "Sign Up!", class: "button" %>
+  <% end %>
+</div>
