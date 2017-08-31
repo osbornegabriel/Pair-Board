@@ -11,10 +11,12 @@
 
 <% @top_mentors.each do |mentor| %>
   <%= mentor.first_name%>
+  <%= mentor.slots.inject(0){|sum, slot| sum + slot.duration} %><br>
 <% end %>
 
 <h2>Top Mentees</h2>
 
 <% @top_mentees.each do |mentee| %>
   <%= mentee.first_name%>
+  <%= mentee.appointments.count %><br>
 <% end %>

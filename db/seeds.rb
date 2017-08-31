@@ -43,7 +43,7 @@ end
   Slot.create(start_time: Time.now, duration: 30, mentor_id: 4)
 end
 
-2.times do
+2.times dom
   Slot.create(start_time: Time.now, duration: 30, mentor_id: 6)
 end
 
