@@ -1,5 +1,5 @@
 class Slot < ApplicationRecord
-  # attr_reader :number_of_slots
+  attr_reader :number_of_slots
   after_save :create_slots
 
   has_many :appointments
