@@ -10,6 +10,7 @@
 
   <header>
     <nav>
+      <%= image_tag("DevBootcamp_Logo.png") %>
       <ul class="nav">
         <% if logged_in? %>
           <%= link_to "Hello #{current_user.first_name}", user_path(current_user) %> |
