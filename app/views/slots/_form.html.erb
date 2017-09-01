@@ -3,7 +3,7 @@
     <h3><%= pluralize(slot.errors.count, "error") %> prohibited this slot from being saved:</h3>
     <ul>
       <% slot.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <p class="error-message"><%= message %></p>
       <% end %>
     </ul>
   <% end %>
