@@ -1,5 +1,7 @@
 <h3>Sign up to pair!</h3>
+<% if session[:user_id] != nil %>
 <%= button_to "Create New Slot", new_slot_path(@slot), method: "get" %><br>
+<% end %>
 
 <div class="slots">
   <% @slots.each do |slot| %>
