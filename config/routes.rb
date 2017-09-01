@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :appointments
   end
 
-  resources :users, only: [:new, :create, :show, :update]
+  resources :users, only: [:new, :create, :show, :update, :edit]
 end

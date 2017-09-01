@@ -1,0 +1,17 @@
+<div class="sm-container">
+  <h3 id="new-user-head">Update your profile</h3>
+  <%= form_for @user do |f| %>
+  	<%= f.text_field :first_name, placeholder: "#{@user.first_name}" %><br>
+  	<%= f.text_field :last_name, placeholder: "#{@user.last_name}" %><br>
+  	<%= f.text_field :email, placeholder: "#{@user.email}" %><br>
+  	<%= f.text_field :phone, placeholder: "#{@user.phone}" %><br>
+    <%= f.text_field :picture_url, placeholder: "#{@user.picture_url}" %><br>
+    <%= f.text_field :bio, placeholder: "#{@user.bio}" %><br>
+    <%= f.text_field :topic1, placeholder: "preferred topic 1" %><br>
+    <%= f.text_field :topic2, placeholder: "preferred topic 2" %><br>
+    <%= f.text_field :topic3, placeholder: "preferred topic 3" %><br>
+
+
+    <%= f.submit "Edit profile!", class: "button" %>
+  <% end %>
+</div>

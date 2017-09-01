@@ -1,21 +1,24 @@
 <h3>I'm a user! See my stuff!</h3>
-<p><%= image_tag @user.picture_url %></p>
-<p><%= @user.first_name %></p>
-<p><%= @user.bio %></p>
+<%= link_to "Edit Profile", edit_user_path(@user) %>
+<p class="pic"><%= image_tag @user.picture_url %></p>
+<p class="name"><%= @user.first_name %> <%= @user.last_name %></p>
+<p class="bio"><%= @user.bio %></p>
+<div class="like_to_mentor">
 <p>I like to mentor on...</p>
-<ul>
-	<% @user.topics.each do |topic| %>
-		<li><p> <%= topic %></p></li>
-	<% end %>
-</ul>
-<div class="left">
+	<ul>
+		<% @user.topics.each do |topic| %>
+			<li><p> <%= topic %></p></li>
+		<% end %>
+	</ul>
+</div>
+<div class="left inline">
 	<p>Upcoming mentoring slots</p>
 	<% @user.mentoring_appointments.each do |appointment| %>
 		<%= appointment %>
 	<% end %>
 </div>
 
-<div class="right">
+<div class="right inline">
 	<p>Upcoming pairing appointments</p>
 	<% @user.appointments_with_mentors.each do |appointment| %>
 		<%= appointment %>
