@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170830212328) do
   create_table "slots", force: :cascade do |t|
     t.time "start_time", null: false
     t.date "date", null: false
-    t.integer "duration", null: false
+    t.string "duration", null: false
     t.integer "mentor_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

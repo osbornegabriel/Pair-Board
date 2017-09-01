@@ -16,13 +16,15 @@
 	  <hr>
 	  <h5 class="username">Username:</h5>
 	  <h5 class="points">Points:</h5>
+
 	  <% @top_mentors.each do |mentor| %>
 		<div class="mentor">
 		  <%= mentor.first_name %>
-		  <%= mentor.slots.inject(0){|sum, slot| sum + slot.duration}/30 %><br>
+		  <%= mentor.slots.inject(0){|sum, slot| sum + slot.duration_as_integer}/30 %><br>
 		</div><br>
 	  <% end %>
 	</div>
+
 
 	<div class="mentees">
 	  <h3>Top Mentees</h3>
@@ -31,7 +33,7 @@
 	  <h5 class="points">Points:</h5>
 	  <% @top_mentees.each do |mentee| %>
 	    <%= mentee.first_name%>
-	    <%= mentee.appointments.count%><br>
+	    <%= mentee.appointments_with_mentors.count%><br>
 	  <% end %>
 	</div>
 </div>

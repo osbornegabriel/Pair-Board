@@ -4,19 +4,21 @@
 
 <% if @slot.mentor_id != session[:user_id] %>
 <%= @slot.date.strftime("%m/%d") %>, <%= @slot.start_time.strftime("%H:%M") %>-<%= @slot.end_time.strftime("%H:%M") %>
-<%= button_to "Book Session", new_appointment_path(@appointment), method: "get" %><br>
+<%= button_to "Book Session", new_slot_appointment_path(@slot ,@appointment), method: "get" %><br>
 <% end %>
 
 <div class="topics-div">
   <h3>Hi! I like to mentor on...</h3>
 
   <div class="topics">
-  <% @slot.mentor.topics.each do |topic| %>
-	<% if @slot.mentor.topics.last != topic %>
-	  <%= topic %>,
-	<% else %>
-	  <%= topic %>
-	<% end %>
+  <% if @slot.mentor.topics %>
+    <% @slot.mentor.topics.each do |topic| %>
+    	<% if @slot.mentor.topics.last != topic %>
+    	  <%= topic %>,
+    	<% else %>
+    	  <%= topic %>
+    	<% end %>
+    <% end %>
   <% end %>
   </div>
 </div>
