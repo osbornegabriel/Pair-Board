@@ -4,8 +4,6 @@ class Slot < ApplicationRecord
   belongs_to :mentor, class_name: "User"
   has_one :mentee, through: :appointment, source: :mentee
 
-  # has_many :mentees, through: :appointments, source: :mentee
-
   validates :start_time, :mentor_id, :duration, :date, presence: true
 
   def duration_convert
@@ -21,7 +19,7 @@ class Slot < ApplicationRecord
   end
 
   def end_time
-    self.start_time + (self.duration_as_integer * 60)
+    self.start_time + self.duration_as_integer
   end
 
 end

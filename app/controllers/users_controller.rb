@@ -20,16 +20,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.topics = user_topics(user_profile_params)
-    @user.update_attributes(user_profile_params)
-    p '8' * 88
-    @user.valid?
-    p @user.errors.full_messages
-    if @user.valid?
-      render "show"
-    else
-      render "edit"
+    if session[:user_id] == @user.id
+      @user = User.find(params[:id])
+      @user.topics = user_topics(user_profile_params)
+      @user.update_attributes(user_profile_params)
+      p '8' * 88
+      @user.valid?
+      p @user.errors.full_messages
+      if @user.valid?
+        render "show"
+      else
+        render "edit"
+      end
     end
   end
 
