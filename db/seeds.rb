@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 User.create(first_name: "Steve", last_name: "Smith", email: "steve@steve.com", password: "password", phone: "1234567890", picture_url: "http://thumbs.dreamstime.com/x/young-owl-wearing-hat-16562958.jpg", bio: "I'm a bird", topics: ["automatic dishwashers", "windshield wipers"])
 User.create(first_name: "Leroy", last_name: "Cohen", email: "tom@tom.com", password: "phonograph", phone: "1234567890")
 User.create(first_name: "Douglas", last_name: "Davison", email: "bom@tom.com", password: "photograph", phone: "1234567891")
@@ -43,7 +44,7 @@ end
   Slot.create(start_time: Time.now, duration: 30, mentor_id: 4)
 end
 
-2.times dom
+2.times do
   Slot.create(start_time: Time.now, duration: 30, mentor_id: 6)
 end
 

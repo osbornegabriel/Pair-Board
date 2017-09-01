@@ -1,1 +1,9 @@
-<h3>Login</h3>
+<div class="sm-container">
+  <h3 id="new-session-head">Welcome Back!</h3>
+  <%= form_tag sessions_path do %>
+    <%= text_field_tag :email, nil, placeholder: "Email" %><br>
+    <%= password_field_tag :password, nil, placeholder: "Password" %>
+    <%= submit_tag "Log in", class: "button" %>
+  <% end %>
+  <span class="extra-info">Don't have an account? <%= link_to 'Sign up!'.html_safe, new_user_url %></span>
+</div>
