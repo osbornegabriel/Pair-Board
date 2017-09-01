@@ -14,6 +14,20 @@
  *= require_self
  */
 
+ .topics {
+ 	border-style: solid;
+ 	border-color: black;
+ 	width: 70%;
+ 	text-align: center;
+ }
+
+ .topics-div {
+ 	border-style: solid;
+ 	border-color: black;
+ 	width: 18%;
+ 	text-align: center;
+ }
+
 .leaderboard {
 	float: left;
 	margin-left: 2%;

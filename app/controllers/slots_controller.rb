@@ -10,13 +10,13 @@ class SlotsController < ApplicationController
   	 @top_mentors = @top_mentors.sort { |a,b| a.slots.inject(0){|sum, slot| sum + slot.duration} <=> b.slots.inject(0){|sum, slot| sum + slot.duration}}
   	 @top_mentors = @top_mentors.reverse.first(5)
 
-	#user.slots.inject(0){|sum, slot| sum + slot.duration}
   	 @top_mentees = User.all
   	 @top_mentees = @top_mentees.sort { |a,b| a.appointments.count <=> b.appointments.count }
   	 @top_mentees = @top_mentees.reverse.first(5)
   end
 
   def show
+    @slot = Slot.find(params[:id])
   end
 
   def new
