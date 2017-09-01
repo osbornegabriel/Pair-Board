@@ -12,6 +12,10 @@
   color: white;
 }
 
+.error-message, .topic {
+  color: #f26539;
+}
+
 #new-session-head {
   font-size: 2.4em;
 }

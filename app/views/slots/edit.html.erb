@@ -1,0 +1,27 @@
+<div class="sm-container">
+  <h3>Edit this mentoring time</h3>
+  <%= form_with(model: @slot, local: true) do |form| %>
+    <% if @slot.errors.any? %>
+      <h3><%= pluralize(@slot.errors.count, "error") %> prohibited this slot from being saved:</h3>
+      <ul>
+        <% @slot.errors.full_messages.each do |message| %>
+          <p class="error-message"><%= message %></p>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= form.label :date %>
+    <%= form.date_field :date, id: :start_date, placeholder: "#{@slot.date}" %>
+    <br>
+    <%= form.label :start_time %>
+    <%= form.time_field :start_time, id: :start_time, placeholder: "#{@slot.start_time}" %>
+    <br>
+    <%= form.select :duration, ["30 minutes", "1 hour", "1 hour 30 minutes", "2 hours"] %>
+
+    <br>
+    <br>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

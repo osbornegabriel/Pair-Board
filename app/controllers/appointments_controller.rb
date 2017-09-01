@@ -9,9 +9,11 @@ class AppointmentsController < ApplicationController
 
     respond_to do |format|
       if @appointment.save
-        format.js { render js: @slot }
-        p "CONFIRMED!"
+        # format.js { render js: @slot }
+        # p "CONFIRMED!"
+        format.html { redirect_to @slot }
       else
+        p "UH OH"
         format.js { render js: @appointment.errors.full_messages, status: :unprocessable_entity }
       end
     end

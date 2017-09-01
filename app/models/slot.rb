@@ -2,7 +2,7 @@ class Slot < ApplicationRecord
   attr_reader :duration_as_integer
   has_one :appointment
   belongs_to :mentor, class_name: "User"
-  has_many :mentees, through: :appointments, source: :mentee
+  has_one :mentee, through: :appointment, source: :mentee
 
   validates :start_time, :mentor_id, :duration, :date, presence: true
 
@@ -19,7 +19,7 @@ class Slot < ApplicationRecord
   end
 
   def end_time
-    self.start_time + (self.duration_as_integer * 60)
+    self.start_time + self.duration_as_integer
   end
 
 end

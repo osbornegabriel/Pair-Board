@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to slots_url
     else
-      @error = "Email and password  combination do not match. Please try again."
+      @errors = ["Email and password combination do not match, please try again."]
       render 'new'
     end
   end
