@@ -12,7 +12,7 @@
   color: white;
 }
 
-.error-message {
+.error-message, .topic {
   color: #f26539;
 }
 
