@@ -14,6 +14,72 @@
  *= require_self
  */
 
- .slot:hover {
- 	background-color: red; 
+ .topics {
+ 	border-style: solid;
+ 	border-color: black;
+ 	width: 70%;
+ 	text-align: center;
  }
+
+ .topics-div {
+ 	border-style: solid;
+ 	border-color: black;
+ 	width: 18%;
+ 	text-align: center;
+ }
+
+.leaderboard {
+	float: left;
+	margin-left: 2%;
+	width: 30%;
+/*	border-style: solid;
+	border-color: black;
+	padding: 4px 4px 4px 4px;*/
+}
+
+.mentor {
+	float: left;
+}
+
+.mentors {
+	border-style: solid;
+	border-color: black;
+}
+
+.mentees {
+	border-style: solid;
+	border-color: black;	
+}
+
+.mentor-score {
+/*	float: right;*/
+}
+
+.mentor_name {
+	text-align: center;
+}
+
+.see-details-button {
+	text-align: center;
+}
+
+ .slots {
+ 	float: left;
+ 	width: 23%;
+/* 	column-count: 2;*/
+ }
+
+.slot {
+	border-color: black;
+	border-style: solid;
+	float: left;
+	width: 155px;
+}
+
+ .slot:hover {
+ 	border-color: red; 
+ }
+
+.username {
+/*	float: left;*/
+}
