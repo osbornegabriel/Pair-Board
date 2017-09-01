@@ -1,6 +1,18 @@
 <div class="sm-container">
   <h3 id="new-user-head">Update your profile</h3>
   <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h4><em>The following prevented your account from being updated:</em></h4>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <p class="error-message"><%= message %></p>
+          <% end %>
+        </ul>
+        <br>
+      </div>
+    <% end %>
+
   	<%= f.text_field :first_name, placeholder: "#{@user.first_name}" %><br>
   	<%= f.text_field :last_name, placeholder: "#{@user.last_name}" %><br>
   	<%= f.text_field :email, placeholder: "#{@user.email}" %><br>
