@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
    get '/' => 'sessions#new'
+   get '/message' => 'twilio#send_text'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :slots do
