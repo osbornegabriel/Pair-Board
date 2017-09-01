@@ -1,13 +1,10 @@
 class SlotsController < ApplicationController
 
   def index
-  	# sort these in chronological order
   	@slots = Slot.all
     @slots = @slots.order(:start_time)
 
-  	# get top 5 sorted by number of appointments
   	 @top_mentors = User.all.select{|user| !user.slots.empty?}
-     # p @top_mentors.first.slots.first.duration_as_integer
   	 @top_mentors = @top_mentors.sort { |a,b| a.slots.inject(0){|sum, slot| sum + slot.duration_as_integer} <=> b.slots.inject(0){|sum, slot| sum + slot.duration_as_integer}}
   	 @top_mentors = @top_mentors.reverse.first(5)
 

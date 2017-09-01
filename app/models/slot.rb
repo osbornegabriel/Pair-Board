@@ -2,7 +2,9 @@ class Slot < ApplicationRecord
   attr_reader :duration_as_integer
   has_one :appointment
   belongs_to :mentor, class_name: "User"
-  has_many :mentees, through: :appointments, source: :mentee
+  has_one :mentee, through: :appointment, source: :mentee
+
+  # has_many :mentees, through: :appointments, source: :mentee
 
   validates :start_time, :mentor_id, :duration, :date, presence: true
 
