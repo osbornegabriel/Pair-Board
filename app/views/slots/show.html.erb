@@ -2,38 +2,32 @@
 <%= @slot.mentor.first_name %><br>
 <%= @slot.mentor.bio %><br><br>
 
-<% if @slot.mentor_id != session[:user_id] %>
 <%= @slot.date.strftime("%m/%d") %>, <%= @slot.start_time.strftime("%H:%M") %>-<%= @slot.end_time.strftime("%H:%M") %>
+
+<% if @slot.mentor_id != session[:user_id] && !@slot.mentee %>
 <%= button_to "Book Session", new_slot_appointment_path(@slot, @appointment), method: "get" %><br>
 <% end %>
 
-
-<h1>Send message to mentor</h1>
-
-<%= form_tag("/message", method: 'get') do %>
-  <%= hidden_field_tag :mentor, "#{@slot.mentor}" %>
-  <%= text_area_tag "message" %>
-  <%= submit_tag "Submit" %>
-<% end %>
-
-<h1>Send message to mentee</h1>
-<%= form_tag("/message", method: 'get') do %>
-  <%= hidden_field_tag :mentee, "#{@slot.mentee}" %>
-  <%= text_area_tag "message" %>
-  <%= submit_tag "Submit" %>
-<% end %>
-
-<br><br>
 
 
 <!-- if there is a mentee and the mentor is logged in -->
 <% if session[:user_id] == @slot.mentor_id && @slot.mentee %>
   <h1>Send message to mentee</h1>
+    <%= form_tag("/message", method: 'get') do %>
+    <%= hidden_field_tag :mentee, "#{@slot.mentee}" %>
+    <%= text_area_tag "message" %>
+    <%= submit_tag "Submit" %>
+  <% end %>
 <% end %>
 
 <!-- if there is a mentee and the mentee is logged in -->
 <% if @slot.mentee && session[:user_id] == @slot.mentee.id %>
   <h1>Send message to mentor</h1>
+  <%= form_tag("/message", method: 'get') do %>
+  <%= hidden_field_tag :mentor, "#{@slot.mentor}" %>
+  <%= text_area_tag "message" %>
+  <%= submit_tag "Submit" %>
+  <% end %>
 <% end %>
 
 

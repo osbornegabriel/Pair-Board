@@ -6,4 +6,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+	ENV["RAILS_ENV"] = "test"
+	require 'dotenv' ; Dotenv.overload ".env"
+
 end
