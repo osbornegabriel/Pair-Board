@@ -1,6 +1,17 @@
 <div class="sm-container">
   <h3 id="new-session-head">Welcome Back!</h3>
   <%= form_tag sessions_path do %>
+    <% if @errors %>
+      <div id="error_explanation">
+        <h4><em>The following prevented your account from logging in:</em></h4>
+        <ul>
+          <% @errors.each do |message| %>
+            <p class="error-message"><%= message %></p>
+          <% end %>
+        </ul>
+        <br>
+      </div>
+    <% end %>
     <%= text_field_tag :email, nil, placeholder: "Email" %><br>
     <%= password_field_tag :password, nil, placeholder: "Password" %>
     <%= submit_tag "Log in", class: "button" %>

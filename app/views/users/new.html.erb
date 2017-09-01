@@ -1,6 +1,17 @@
 <div class="sm-container">
   <h3 id="new-user-head">Join the Party!</h3>
   <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h4><em>The following prevented your account from being created:</em></h4>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <p class="error-message"><%= message %></p>
+          <% end %>
+        </ul>
+        <br>
+      </div>
+    <% end %>
     <%= f.text_field :first_name, placeholder: "First Name" %><br>
     <%= f.text_field :last_name, placeholder: "Last Name" %><br>
     <%= f.text_field :email, placeholder: "Email" %><br>
