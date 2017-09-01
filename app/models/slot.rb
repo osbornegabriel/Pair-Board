@@ -24,7 +24,7 @@ class Slot < ApplicationRecord
   end
 
   def duration_string=(duration_string)
-    @duration = self.duration_convert[duration_string]
+    self.duration = self.duration_convert[duration_string.chomp]
   end
 
   def end_time
