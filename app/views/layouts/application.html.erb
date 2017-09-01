@@ -12,7 +12,7 @@
     <nav>
       <ul class="nav">
         <% if logged_in? %>
-          <%= link_to "Signed in as #{current_user.first_name}; see profile", user_path(current_user) %> |
+          <%= link_to "Hello #{current_user.first_name}", user_path(current_user) %> |
           <%= link_to "Sign Out", session_path(current_user.id), method: :delete %>
         <% end %>
        </ul>

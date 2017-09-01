@@ -1,16 +1,16 @@
-<img src="<%= @slot.mentor.picture_url %>" style="width:128px;height:128px;"><br>
-<%= @slot.mentor.first_name %><br>
+<img src="<%= user_profile_pic(@slot.mentor) %>" style="width:128px;height:128px;"><br>
+<%= link_to "#{@slot.mentor.first_name}", @slot.mentor %><br>
 <%= @slot.mentor.bio %><br><br>
 
 <%= @slot.date.strftime("%m/%d") %>, <%= @slot.start_time.strftime("%H:%M") %>-<%= @slot.end_time.strftime("%H:%M") %>
 
 <% if session[:user_id] != nil && @slot.mentor_id != session[:user_id] && !@slot.mentee %>
-<%= button_to "Book Session", new_slot_appointment_path(@slot, @appointment), method: "get" %><br>
+  <%= button_to "Book Session", new_slot_appointment_path(@slot, @appointment), method: "get" %><br>
 <% end %>
 
 <% if @slot.mentor_id == current_user.id %>
-<%= button_to "Cancel Session", slot_path(@slot), method: "delete" %><br>
-<%= button_to "Edit Session", edit_slot_path(@slot), method: "get" %><br>
+  <%= button_to "Cancel Session", slot_path(@slot), method: "delete" %><br>
+  <%= button_to "Edit Session", edit_slot_path(@slot), method: "get" %><br>
 <% end %>
 
 
@@ -30,9 +30,9 @@
 <% if @slot.mentee && session[:user_id] == @slot.mentee.id %>
   <h1>Send message to mentor</h1>
   <%= form_tag("/message", method: 'get') do %>
-  <%= hidden_field_tag :mentor, "#{@slot.mentor}" %>
-  <%= text_area_tag "message" %>
-  <%= submit_tag "Submit" %>
+    <%= hidden_field_tag :mentor, "#{@slot.mentor}" %>
+    <%= text_area_tag "message" %>
+    <%= submit_tag "Submit" %>
   <% end %>
 <% end %>
 
@@ -43,15 +43,15 @@
   <h3>Hi! I like to mentor on...</h3>
 
   <div class="topics">
-  <% if @slot.mentor.topics %>
-    <% @slot.mentor.topics.each do |topic| %>
-    	<% if @slot.mentor.topics.last != topic %>
-    	  <%= topic %>,
-    	<% else %>
-    	  <%= topic %>
-    	<% end %>
+    <% if @slot.mentor.topics %>
+      <% @slot.mentor.topics.each do |topic| %>
+      	<% if @slot.mentor.topics.last != topic %>
+      	  <%= topic %>,
+      	<% else %>
+      	  <%= topic %>
+      	<% end %>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
 </div>
 <%= link_to 'Home', slots_path %>

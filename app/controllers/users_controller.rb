@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      params[:user_id] = @user.id
       redirect_to '/'
     else
       render 'new'
