@@ -8,6 +8,12 @@
 <%= button_to "Book Session", new_slot_appointment_path(@slot, @appointment), method: "get" %><br>
 <% end %>
 
+<% if @slot.mentor_id == current_user.id %>
+<%= button_to "Cancel Session", slot_path(@slot), method: "delete" %><br>
+<%= button_to "Edit Session", edit_slot_path(@slot), method: "get" %><br>
+<% end %>
+
+
 
 
 <!-- if there is a mentee and the mentor is logged in -->
