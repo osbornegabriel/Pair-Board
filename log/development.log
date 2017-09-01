@@ -33667,3 +33667,18 @@ Processing by SlotsController#index as HTML
 Completed 200 OK in 85ms (Views: 31.7ms | ActiveRecord: 6.6ms)
 
 
+Started DELETE "/sessions/7" for 127.0.0.1 at 2017-09-01 00:09:54 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GyGrxULZA2CCZjQrK5RyWhn6VV9eAlXaNO7IbtCcFYSHXhOLI5r5DIdZ2Q61mETvJmXYdu8B/ec6xOriIWJsog==", "id"=>"7"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-01 00:09:55 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 213ms (Views: 212.8ms | ActiveRecord: 0.0ms)
+
+
