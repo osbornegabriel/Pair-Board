@@ -1,5 +1,5 @@
-<img src="<%= @slot.mentor.picture_url %>" style="width:128px;height:128px;"><br>
-<%= @slot.mentor.first_name %><br>
+<img src="<%= user_profile_pic(@slot.mentor) %>" style="width:128px;height:128px;"><br>
+<%= link_to "#{@slot.mentor.first_name}", @slot.mentor %><br>
 <%= @slot.mentor.bio %><br><br>
 
 <%= @slot.date.strftime("%m/%d") %>, <%= @slot.start_time.strftime("%H:%M") %>-<%= @slot.end_time.strftime("%H:%M") %>
