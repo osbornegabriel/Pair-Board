@@ -29555,3 +29555,184 @@ Processing by AppointmentsController#new as HTML
 Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/slots/1" for 127.0.0.1 at 2017-08-31 19:09:30 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" WHERE "slots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering slots/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/slots/1" for 127.0.0.1 at 2017-08-31 19:37:02 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlot Load (0.9ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" WHERE "slots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering slots/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 29ms (Views: 23.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-01 10:32:37 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 177ms (Views: 171.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/slots" for 127.0.0.1 at 2017-09-01 10:32:41 -0500
+Processing by SlotsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mSlot Load (0.6ms)[0m  [1m[34mSELECT "slots".* FROM "slots" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 2]]
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 3]]
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 1]]
+  [1m[36mSlot Load (0.3ms)[0m  [1m[34mSELECT "slots".* FROM "slots" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 5]]
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 6]]
+  [1m[36mSlot Load (0.2ms)[0m  [1m[34mSELECT "slots".* FROM "slots" WHERE "slots"."mentor_id" = $1[0m  [["mentor_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 6]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 6]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 5]]
+  Rendering slots/index.html.erb within layouts/application
+  [1m[36mSlot Load (0.8ms)[0m  [1m[34mSELECT "slots".* FROM "slots" ORDER BY "slots"."start_time" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (7.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (2.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (2.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (2.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (2.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (2.0ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (2.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered slots/_slot.html.erb (2.1ms)
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 5]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 4]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 3]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "appointments" WHERE "appointments"."mentee_id" = $1[0m  [["mentee_id", 2]]
+  Rendered slots/index.html.erb within layouts/application (108.2ms)
+Completed 200 OK in 210ms (Views: 121.3ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/slots/1" for 127.0.0.1 at 2017-09-01 10:32:42 -0500
+Processing by SlotsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSlot Load (0.4ms)[0m  [1m[34mSELECT  "slots".* FROM "slots" WHERE "slots"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering slots/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered slots/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 27ms (Views: 20.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2017-09-01 10:33:11 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2017-09-01 10:33:28 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
