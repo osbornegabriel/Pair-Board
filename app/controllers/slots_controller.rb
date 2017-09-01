@@ -22,13 +22,36 @@ class SlotsController < ApplicationController
   end
 
   def create
-    @slot = Slot.new(slot_params)
-    @slot.mentor_id = current_user.id
-    if @slot.save
-      redirect_to '/'
-    else
-      render 'new'
+    if session[:user_id] != nil
+      @slot = Slot.new(slot_params)
+      @slot.mentor_id = current_user.id
+      if @slot.save
+        redirect_to '/'
+      else
+        render 'new'
+      end
     end
+  end
+
+  def edit
+    @slot = Slot.find(params[:id])
+    render "edit"
+  end
+
+  def update
+    @slot = Slot.find(params[:id])
+    @slot.update(slot_params)
+    if @slot.valid?
+      render "show"
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @slot = Slot.find(params[:id])
+    @slot.destroy
+    redirect_to '/'
   end
 
   private

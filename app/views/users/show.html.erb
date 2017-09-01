@@ -1,36 +1,44 @@
-<%= link_to "Edit Profile", edit_user_path(@user) %>
+<% if session[:user_id] == @user.id %>
+  <%= link_to "Edit Profile", edit_user_path(@user) %>
+<% end %>
 <p class="pic"><%= image_tag user_profile_pic(@user) %></p>
 <p class="name"><%= @user.first_name %> <%= @user.last_name %></p>
 <p class="bio"><%= @user.bio %></p>
-<div class="like_to_mentor">
-<p>I like to mentor on...</p>
-	<% if @user.topics && @user.topics[0] != "" %>
-		<ul>
-			<% @user.topics.each do |topic| %>
-				<li><p class="topic"> <%= topic %></p></li>
+
+<% if @user.topics %>
+	<div class="like_to_mentor">
+	<p>I like to mentor on...</p>
+		<% if @user.topics && @user.topics[0] != "" %>
+			<ul>
+				<% @user.topics.each do |topic| %>
+					<li><p class="topic"> <%= topic %></p></li>
+				<% end %>
+			</ul>
+		<% end %>
+	</div>
+<% end %>
+<% if @user.mentoring_appointments.length > 0 %>
+	<div class="left inline">
+		<h3>Upcoming mentoring slots</h3>
+		<p>
+			<% @user.mentoring_appointments.each do |appointment| %>
+				<%= appointment.display_appointment %>
+				<br>
 			<% end %>
-		</ul>
-	<% end %>
-</div>
-<div class="left inline">
-	<h3>Upcoming mentoring slots</h3>
-	<p>
-		<% @user.mentoring_appointments.each do |appointment| %>
-			<%= appointment.display_appointment %>
-			<br>
-		<% end %>
-	</p>
-</div>
+		</p>
+	</div>
+<% end %>
 
-<div class="right inline">
-	<h3>Upcoming pairing appointments</h3>
-	<p>
-		<% @user.appointments_with_mentors.each do |appointment| %>
-			<%= appointment.display_appointment %>
-			<br>
-		<% end %>
-	</p>
-</div>
+<% if @user.appointments_with_mentors.length > 0 %>
+	<div class="right inline">
+		<h3>Upcoming pairing appointments</h3>
+		<p>
+			<% @user.appointments_with_mentors.each do |appointment| %>
+				<%= appointment.display_appointment %>
+				<br>
+			<% end %>
+		</p>
+	</div>
+<% end %>
 
-<%= link_to 'Home', '/' %>
-
+<%= link_to 'Home', slots_path %>
