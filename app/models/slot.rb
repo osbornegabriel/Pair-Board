@@ -1,8 +1,7 @@
 class Slot < ApplicationRecord
-#  attr_writer :duration
-#  after_save :create_slots
+  attr_writer :duration
 
-  has_many :appointments
+  has_one :appointment
   belongs_to :mentor, class_name: "User"
   has_many :mentees, through: :appointments, source: :mentee
 
