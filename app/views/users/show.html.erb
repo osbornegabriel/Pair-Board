@@ -1,5 +1,5 @@
 <% if session[:user_id] == @user.id %>
-<%= link_to "Edit Profile", edit_user_path(@user) %>
+  <%= link_to "Edit Profile", edit_user_path(@user) %>
 <% end %>
 
 <% if @user.picture_url %>
@@ -10,28 +10,36 @@
 <% if @user.topics %>
 <div class="like_to_mentor">
 <p>I like to mentor on...</p>
-	<ul>
-		<% @user.topics.each do |topic| %>
-			<li><p> <%= topic %></p></li>
-		<% end %>
-	</ul>
+	<% if @user.topics[0] != "" %>
+		<ul>
+			<% @user.topics.each do |topic| %>
+				<li><p class="topic"> <%= topic %></p></li>
+			<% end %>
+		</ul>
+	<% end %>
 </div>
 <% end %>
 <% if @user.mentoring_appointments.length > 0 %>
 <div class="left inline">
-	<p>Upcoming mentoring slots</p>
-	<% @user.mentoring_appointments.each do |appointment| %>
-		<%= appointment %>
-	<% end %>
+	<h3>Upcoming mentoring slots</h3>
+	<p>
+		<% @user.mentoring_appointments.each do |appointment| %>
+			<%= appointment.display_appointment %>
+			<br>
+		<% end %>
+	</p>
 </div>
 <% end %>
 
 <% if @user.appointments_with_mentors.length > 0 %>
 <div class="right inline">
-	<p>Upcoming pairing appointments</p>
-	<% @user.appointments_with_mentors.each do |appointment| %>
-		<%= appointment %>
-	<% end %>
+	<h3>Upcoming pairing appointments</h3>
+	<p>
+		<% @user.appointments_with_mentors.each do |appointment| %>
+			<%= appointment.display_appointment %>
+			<br>
+		<% end %>
+	</p>
 </div>
 <% end %>
 <%= link_to 'Home', slots_path %>
