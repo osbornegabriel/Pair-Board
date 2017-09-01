@@ -4,7 +4,7 @@
 
 <%= @slot.date.strftime("%m/%d") %>, <%= @slot.start_time.strftime("%H:%M") %>-<%= @slot.end_time.strftime("%H:%M") %>
 
-<% if @slot.mentor_id != session[:user_id] && !@slot.mentee %>
+<% if session[:user_id] != nil && @slot.mentor_id != session[:user_id] && !@slot.mentee %>
 <%= button_to "Book Session", new_slot_appointment_path(@slot, @appointment), method: "get" %><br>
 <% end %>
 
