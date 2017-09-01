@@ -2,11 +2,13 @@
 <%= link_to "#{@slot.mentor.first_name}", @slot.mentor %><br>
 <%= @slot.mentor.bio %><br><br>
 
-<%= @slot.date.strftime("%m/%d") %>, <%= @slot.start_time.strftime("%H:%M") %>-<%= @slot.end_time.strftime("%H:%M") %>
+<div class="book-slot">
+  <%= @slot.date.strftime("%m/%d") %>, <%= @slot.start_time.strftime("%H:%M") %>-<%= @slot.end_time.strftime("%H:%M") %>
 
-<% if session[:user_id] != nil && @slot.mentor_id != session[:user_id] && !@slot.mentee %>
-  <%= button_to "Book Session", new_slot_appointment_path(@slot, @appointment), method: "get" %><br>
-<% end %>
+  <% if session[:user_id] != nil && @slot.mentor_id != session[:user_id] && !@slot.mentee %>
+    <%= button_to "Book Session", slot_appointments_path(@slot), method: "POST", remote: true, params: { mentee_id: current_user.id } %><br>
+  <% end %>
+</div>
 
 <% if @slot.mentor_id == current_user.id %>
   <%= button_to "Cancel Session", slot_path(@slot), method: "delete" %><br>
@@ -34,6 +36,7 @@
     <%= text_area_tag "message" %>
     <%= submit_tag "Submit" %>
   <% end %>
+
 <% end %>
 
 
@@ -54,4 +57,5 @@
     <% end %>
   </div>
 </div>
+
 <%= link_to 'Home', slots_path %>

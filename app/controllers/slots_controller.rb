@@ -4,6 +4,7 @@ class SlotsController < ApplicationController
   	@slots = Slot.all
     @slots = @slots.order(:date)
 
+
   	 @top_mentors = User.all.select{|user| !user.slots.empty?}
   	 @top_mentors = @top_mentors.sort { |a,b| a.slots.inject(0){|sum, slot| sum + slot.duration_as_integer} <=> b.slots.inject(0){|sum, slot| sum + slot.duration_as_integer}}
   	 @top_mentors = @top_mentors.reverse.first(5)
