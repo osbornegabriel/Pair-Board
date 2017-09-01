@@ -18,7 +18,5 @@
 
 # dotenv
 .env
-<<<<<<< HEAD
-=======
+
 secrets.yml
->>>>>>> master
