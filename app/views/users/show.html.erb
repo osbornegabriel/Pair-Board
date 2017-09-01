@@ -4,10 +4,10 @@
 <p class="bio"><%= @user.bio %></p>
 <div class="like_to_mentor">
 <p>I like to mentor on...</p>
-	<% if @user.topics.empty? %>
+	<% if @user.topics[0] != "" %>
 		<ul>
 			<% @user.topics.each do |topic| %>
-				<li><p> <%= topic %></p></li>
+				<li><p class="topic"> <%= topic %></p></li>
 			<% end %>
 		</ul>
 	<% end %>
