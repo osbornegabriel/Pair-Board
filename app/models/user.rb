@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class User < ApplicationRecord
   include BCrypt
   attr_accessor :topic1, :topic2, :topic3
