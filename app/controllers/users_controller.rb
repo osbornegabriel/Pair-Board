@@ -20,6 +20,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    # if @user.update()
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    render "edit"
   end
 
   private
@@ -28,4 +35,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :email, :password, :phone)
   end
 
+  def topic_params
+    p"*"*90
+    p params.require(:user).permit(:topic1, :topic2, :topic3)
+  end
 end

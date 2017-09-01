@@ -11,7 +11,7 @@ class SlotsController < ApplicationController
 
 	#user.slots.inject(0){|sum, slot| sum + slot.duration}
   	 @top_mentees = User.all
-  	 @top_mentees = @top_mentees.sort { |a,b| a.appointments.count <=> b.appointments.count }
+  	 @top_mentees = @top_mentees.sort { |a,b| a.appointments_with_mentors.count <=> b.appointments_with_mentors.count }
   	 @top_mentees = @top_mentees.reverse.first(5)
   end
 

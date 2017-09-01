@@ -1,5 +1,5 @@
 <h3>I'm a user! See my stuff!</h3>
-<%= link_to "Edit Profile", user_path(@user), method="put"%>
+<%= link_to "Edit Profile", edit_user_path(@user) %>
 <p class="pic"><%= image_tag @user.picture_url %></p>
 <p class="name"><%= @user.first_name %> <%= @user.last_name %></p>
 <p class="bio"><%= @user.bio %></p>
