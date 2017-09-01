@@ -31,6 +31,27 @@ class SlotsController < ApplicationController
     end
   end
 
+  def edit
+    @slot = Slot.find(params[:id])
+    render "edit"
+  end
+
+  def update
+    @slot = Slot.find(params[:id])
+    @slot.update(slot_params)
+    if @slot.valid?
+      render "show"
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @slot = Slot.find(params[:id])
+    @slot.destroy
+    redirect_to '/'
+  end
+
   private
 
     def slot_params
