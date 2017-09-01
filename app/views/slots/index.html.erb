@@ -11,7 +11,7 @@
 
 <% @top_mentors.each do |mentor| %>
   <%= mentor.first_name%>
-  <%= mentor.slots.inject(0){|sum, slot| sum + slot.duration} %><br>
+  <%= mentor.slots.inject(0){|sum, slot| sum + slot.duration_as_integer} %><br>
 <% end %>
 
 <h2>Top Mentees</h2>

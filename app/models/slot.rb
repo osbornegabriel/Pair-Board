@@ -7,7 +7,7 @@
 # end
 
 class Slot < ApplicationRecord
-
+  attr_reader :duration_as_integer
   has_one :appointment
   belongs_to :mentor, class_name: "User"
   has_many :mentees, through: :appointments, source: :mentee
@@ -22,16 +22,17 @@ class Slot < ApplicationRecord
     }
   end
 
+  def duration_as_integer
+    duration_convert[self.duration]
+  end
+
   # def duration_string=(duration_string)
   #   @duration = 5
   #   # duration_convert[duration_string.chomp]
   # end
 
-# def duration
-    # duration_convert[duration_string.chomp]
-# end
 
   def end_time
-    self.start_time + self.duration
+    self.start_time + duration_as_integer
   end
 end
