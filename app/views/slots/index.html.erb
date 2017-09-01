@@ -17,10 +17,11 @@
 	  <h5 class="username">Username:</h5>
 	  <h5 class="points">Points:</h5>
 
+	  <% @top_mentors.sort_by! {|mentor| mentor.slots.count}.reverse! %>
 	  <% @top_mentors.each do |mentor| %>
 		<div class="mentor">
 		  <%= mentor.first_name %>
-		  <%= mentor.slots.inject(0){|sum, slot| sum + slot.duration_as_integer}/30 %><br>
+		  <%= mentor.slots.count %><br>
 		</div><br>
 	  <% end %>
 	</div>
