@@ -3,8 +3,10 @@
 <%= @slot.mentor.bio %><br><br>
 
 <% if @slot.mentor_id != session[:user_id] %>
-  <%= @slot.date.strftime("%m/%d") %>, <%= @slot.start_time.strftime("%H:%M") %>-<%= @slot.end_time.strftime("%H:%M") %>
-  <%= button_to "Book Session", slot_appointments_path(@slot), method: "POST", remote: true, class: "book-slot", params: { mentee_id: current_user.id } %><br>
+  <div class="book-slot">
+    <%= @slot.date.strftime("%m/%d") %>, <%= @slot.start_time.strftime("%H:%M") %>-<%= @slot.end_time.strftime("%H:%M") %>
+    <%= button_to "Book Session", slot_appointments_path(@slot), method: "POST", remote: true, params: { mentee_id: current_user.id } %><br>
+  </div>
 <% end %>
 
 <div class="topics-div">
