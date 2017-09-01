@@ -24,7 +24,11 @@ class SlotsController < ApplicationController
 
   def create
     @slot = Slot.new(slot_params)
-    @slot.mentor = current_user
+    p '8' * 88
+    p @slot
+    @slot.mentor_id = current_user.id
+    p @slot
+    p @slot.errors.full_messages if !@slot.valid?
     if @slot.save
       redirect_to '/'
     else
@@ -35,6 +39,6 @@ class SlotsController < ApplicationController
   private
 
     def slot_params
-      params.require(:slot).permit(:date, :start_time, :duration_string)
+      params.require(:slot).permit(:date, :start_time, :duration)
     end
 end

@@ -7,7 +7,6 @@
 # end
 
 class Slot < ApplicationRecord
-  attr_writer :duration
 
   has_one :appointment
   belongs_to :mentor, class_name: "User"
@@ -23,9 +22,14 @@ class Slot < ApplicationRecord
     }
   end
 
-  def duration_string=(duration_string)
-    self.duration = self.duration_convert[duration_string.chomp]
-  end
+  # def duration_string=(duration_string)
+  #   @duration = 5
+  #   # duration_convert[duration_string.chomp]
+  # end
+
+# def duration
+    # duration_convert[duration_string.chomp]
+# end
 
   def end_time
     self.start_time + self.duration
