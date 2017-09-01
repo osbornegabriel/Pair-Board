@@ -1,10 +1,10 @@
 <%= link_to "Edit Profile", edit_user_path(@user) %>
-<p class="pic"><%= image_tag @user.picture_url %></p>
+<p class="pic"><%= image_tag user_profile_pic(@user) %></p>
 <p class="name"><%= @user.first_name %> <%= @user.last_name %></p>
 <p class="bio"><%= @user.bio %></p>
 <div class="like_to_mentor">
 <p>I like to mentor on...</p>
-	<% if @user.topics[0] != "" %>
+	<% if @user.topics && @user.topics[0] != "" %>
 		<ul>
 			<% @user.topics.each do |topic| %>
 				<li><p class="topic"> <%= topic %></p></li>
