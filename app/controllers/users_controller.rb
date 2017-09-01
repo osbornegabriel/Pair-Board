@@ -21,7 +21,16 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    # if @user.update()
+    @user.topics = user_topics(user_profile_params)
+    @user.update_attributes(user_profile_params)
+    p '8' * 88
+    @user.valid?
+    p @user.errors.full_messages
+    if @user.valid?
+      render "show"
+    else
+      render "edit"
+    end
   end
 
   def edit
@@ -35,8 +44,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :email, :password, :phone)
   end
 
-  def topic_params
-    p"*"*90
-    p params.require(:user).permit(:topic1, :topic2, :topic3)
+  def user_profile_params
+    params.require(:user).permit(:picture_url, :bio, :topic1, :topic2, :topic3)
   end
 end
